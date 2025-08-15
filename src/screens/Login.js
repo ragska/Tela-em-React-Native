@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, Image, TextInput } from 'react-native';
 import BackButton from '../component/BackButton';
+import Checkbox from 'expo-checkbox';
+
 
 export default function Login() {
   const [username, setUsername] = useState('');
@@ -16,6 +18,9 @@ export default function Login() {
       alert('Usuário ou senha inválidos.');
     }
   };
+
+  const [isChecked, setIsChecked] = useState(false);
+
 
   return (
     <View style={styles.container}>
@@ -45,6 +50,11 @@ export default function Login() {
       />
 
       <View style={styles.optionsRow}>
+        <Checkbox
+          value={isChecked}
+          onValueChange={setIsChecked}
+          color={isChecked ? '#00C853' : undefined}
+        />
         <Text style={styles.subtitle}>Lembrar senha</Text>
         <Text style={styles.forgot}>Esqueci minha senha</Text>
       </View>
