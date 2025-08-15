@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import casual_dog from './src/assets/casual_dog.png';
-import Google from './src/assets/Google.png';
+import casual_dog from '../assets/casual_dog.png'; 
+import Google from '../assets/Google.png';
 
-export default function Tela1() {
+export default function Tela1({ navigation }) {
   return (
     <View style={styles.container}>
       <Image
